@@ -1,0 +1,105 @@
+/* -------- BASIC RESET -------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------- BODY -------- */
+body {
+    background-color: #f4f6f8;
+    padding: 40px;
+}
+
+/* -------- HEADINGS -------- */
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* -------- LINKS -------- */
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 8px 14px;
+    border-radius: 5px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* -------- FORMS -------- */
+form {
+    background: white;
+    padding: 25px;
+    width: 350px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* -------- BUTTON -------- */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1e7e34;
+}
+
+/* -------- EVENT CARD -------- */
+.event-card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.08);
+}
+
+/* -------- TABLE -------- */
+table {
+    background: white;
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* -------- DASHBOARD -------- */
+.dashboard-links a {
+    margin-bottom: 10px;
+}
