@@ -1,0 +1,15 @@
+<h2>Events</h2>
+
+{% for event in events %}
+<div style="border:1px solid black; padding:10px; margin:10px;">
+    <h3>{{ event.title }}</h3>
+    <p>{{ event.date }} | {{ event.location }}</p>
+    <p>{{ event.description }}</p>
+
+    {% if session['role'] == 'user' %}
+        <a href="/register-event/{{ event.id }}">Register</a>
+    {% endif %}
+</div>
+{% endfor %}
+
+<a href="/dashboard">Back</a>
