@@ -177,4 +177,11 @@ def registrations():
 def logout():
     session.clear()
     return render_template("logout.html")
-# ---------------- INITIALIZE ----------------
+
+
+
+if __name__ == "__main__":
+    create_tables()
+    create_admin()
+    app.run(debug=True)
+
