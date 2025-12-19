@@ -155,27 +155,6 @@ def view_events():
     return render_template("view_events.html", events=events)
 
 
-@app.route("/register-event/<int:event_id>")
-def register_event(event_id):
-    if "user_id" not in session or session["role"] != "user":
-        return redirect("/login")
-
-    user_id = session["user_id"]
-
-    conn = get_db_connection()
-    try:
-        conn.execute(
-            "INSERT INTO registrations (user_id, event_id) VALUES (?, ?)",
-            (user_id, event_id)
-        )
-        conn.commit()
-        msg = "Successfully Registered!"
-    except:
-        msg = "Already Registered!"
-    conn.close()
-
-    return msg + "<br><a href='/view-events'>Back</a>"
-
 
 @app.route("/registrations")
 def registrations():
@@ -197,10 +176,5 @@ def registrations():
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect("/login")
-
-
-if __name__ == "__main__":
-    create_tables()
-    create_admin()
-    app.run(debug=True)
+    return render_template("logout.html")
+# ---------------- INITIALIZE ----------------

@@ -1,20 +1,36 @@
-<h2>Events</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
 
-{% for event in events %}
-<div style="border:1px solid black; padding:10px; margin:10px;">
-    <h3>{{ event.title }}</h3>
-    <p>{{ event.date }} | {{ event.location }}</p>
-    <p>{{ event.description }}</p>
+<h2>Upcoming Events</h2>
 
-    {% if session['role'] == 'user' %}
-        <a href="/register-event/{{ event.id }}">Register</a>
-    {% endif %}
-</div>
-{% endfor %}
+{% if events %}
+    {% for event in events %}
+        <div class="event-card">
+            <h3>{{ event.title }}</h3>
+            <p><b>Date:</b> {{ event.date }}</p>
+            <p><b>Location:</b> {{ event.location }}</p>
+            <p>{{ event.description }}</p>
 
+            {% if session['role'] == 'user' %}
+                <a href="/register-event/{{ event.id }}"
+                   onclick="return confirmRegistration()">
+                   Register
+                </a>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No events available</p>
+{% endif %}
+
+<br>
 <a href="/dashboard">Back</a>
-<link rel="stylesheet" href="/static/css/style.css">
+
 <script src="/static/js/script.js"></script>
-<a href="/register-event/{{ event.id }}" onclick="return confirmRegistration()">
-    Register
-</a>
+</body>
+</html>
