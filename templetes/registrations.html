@@ -1,0 +1,19 @@
+<h2>Event Registrations</h2>
+
+<table border="1" cellpadding="8">
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Event</th>
+</tr>
+
+{% for row in data %}
+<tr>
+    <td>{{ row.name }}</td>
+    <td>{{ row.email }}</td>
+    <td>{{ row.title }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/dashboard">Back</a>
